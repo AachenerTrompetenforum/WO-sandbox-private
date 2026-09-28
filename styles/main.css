@@ -234,7 +234,6 @@ p { color: var(--text-secondary); line-height: 1.8; font-size: 16px; font-weight
 
 @media (max-width: 900px) {
   .nav-links { display: none; }
-  .nav-lang { display: none; }
   .nav-burger { display: flex; }
   .nav-inner { padding: 0 20px; }
   .nav-mobile { padding: 16px 20px 24px; }
@@ -747,7 +746,7 @@ p { color: var(--text-secondary); line-height: 1.8; font-size: 16px; font-weight
 .gallery-section { background: var(--bg); overflow: hidden; }
 
 .gallery-marquee-wrap {
-  overflow: hidden;
+  overflow-x: auto; overflow-y: hidden;
   mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);
   -webkit-mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);
 }
@@ -756,9 +755,7 @@ p { color: var(--text-secondary); line-height: 1.8; font-size: 16px; font-weight
   display: flex;
   gap: 16px;
   width: max-content;
-  animation: galleryScroll 42s linear infinite;
 }
-.gallery-marquee:hover { animation-play-state: paused; }
 
 @keyframes galleryScroll {
   from { transform: translateX(0); }
@@ -795,7 +792,7 @@ p { color: var(--text-secondary); line-height: 1.8; font-size: 16px; font-weight
    NEWS — CONTINUOUS MARQUEE
    ============================================ */
 .news-marquee-wrap {
-  overflow: hidden;
+  overflow-x: auto; overflow-y: hidden;
   mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);
   -webkit-mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);
 }
@@ -803,9 +800,7 @@ p { color: var(--text-secondary); line-height: 1.8; font-size: 16px; font-weight
   display: flex;
   gap: 20px;
   width: max-content;
-  animation: newsScroll 50s linear infinite;
 }
-.news-marquee:hover { animation-play-state: paused; }
 @keyframes newsScroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
@@ -1477,3 +1472,63 @@ body::before {
 [data-theme="dark"] .d3-map-container {
   background-image: radial-gradient(circle, rgba(196,154,42,0.08) 1px, transparent 1px);
 }
+
+
+/* ============================================
+   SCROLLABLE MARQUEES (Drag am PC, Wischen am Handy)
+   ============================================ */
+.gallery-marquee-wrap,
+.news-marquee-wrap {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+.gallery-marquee-wrap::-webkit-scrollbar,
+.news-marquee-wrap::-webkit-scrollbar { display: none; }
+.gallery-marquee-wrap.is-dragging,
+.news-marquee-wrap.is-dragging { cursor: grabbing; user-select: none; -webkit-user-select: none; }
+.gallery-marquee-wrap img,
+.news-marquee-wrap img { pointer-events: none; -webkit-user-drag: none; user-select: none; }
+.news-marquee .news-card { user-select: none; -webkit-user-select: none; }
+.news-marquee-wrap.is-dragging .news-card:hover,
+.gallery-marquee-wrap.is-dragging .gallery-item:hover img { transform: none; }
+
+/* ============================================
+   BAROCKORCHESTER: ANMELDE-BUTTON + ANMELDESEITE
+   ============================================ */
+[hidden] { display: none !important; }
+
+.signup-block { margin-top: 32px; }
+.signup-block .btn-primary { white-space: normal; text-align: left; line-height: 1.4; }
+
+.embed-gate {
+  max-width: 640px;
+  padding: 36px;
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius);
+  backdrop-filter: blur(12px);
+}
+[data-theme="dark"] .embed-gate { border-color: rgba(196,154,42,0.15); }
+.embed-gate h3 { margin-bottom: 14px; }
+.embed-gate p { font-size: 15px; margin-bottom: 24px; }
+.embed-gate p a { text-decoration: underline; text-underline-offset: 3px; }
+.embed-gate-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+.form-embed {
+  max-width: 640px;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.form-embed iframe {
+  display: block;
+  width: 100%;
+  height: 1938px;
+  border: 0;
+}
+@media (max-width: 640px) { .form-embed iframe { height: 2300px; } }
+
+.embed-back { margin-top: 32px; font-size: 14px; }
+.embed-back a { color: var(--text-secondary); }
