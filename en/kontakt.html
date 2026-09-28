@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Aachener Trompetenforum</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles/main.css" />
+  <script defer src="https://tf-relay.aachenertrompetenforum.workers.dev/relay.js" data-website-id="73dd01e4-08a1-45f8-b1a7-6894878c84d9" data-host-url="https://tf-relay.aachenertrompetenforum.workers.dev"></script>
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="/en/" class="nav-logo"><img src="../images/logo.png" alt="Aachener Trompetenforum" /></a>
+      <div class="nav-links">
+        <a href="/en/#about">About</a>
+        <a href="news.html">News</a>
+        <a href="ensembles.html">Ensembles</a>
+        <a href="barockorchester.html">Baroque Orchestra</a>
+        <a href="foerderer.html">Supporters</a>
+        <a href="/en/#members">Members</a>
+        <a href="kontakt.html" class="active">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <div class="nav-lang"><a href="/kontakt.html">DE</a><span>/</span><a href="kontakt.html" class="active">EN</a></div>
+        <button class="theme-toggle" id="themeToggle"><span class="icon-sun">☀</span><span class="icon-moon">☽</span></button>
+        <button class="nav-burger" id="navBurger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="/en/#about">About</a><a href="news.html">News</a><a href="ensembles.html">Ensembles</a><a href="barockorchester.html">Baroque Orchestra</a><a href="foerderer.html">Supporters</a><a href="/en/#members">Members</a><a href="kontakt.html">Contact</a>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label" data-reveal>Get in Touch</span>
+      <h1 data-reveal>Contact</h1>
+      <p class="page-hero-sub" data-reveal>For inquiries about concerts, collaborations, ensemble bookings, and everything else.</p>
+    </div>
+  </section>
+
+  <section class="section contact-section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <div class="contact-info" data-reveal>
+          <div class="contact-item">
+            <span class="contact-label">Email</span>
+            <a href="mailto:contact@trompetenforum.rwth-aachen.de" class="contact-value">contact@trompetenforum<br />.rwth-aachen.de</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">Instagram</span>
+            <a href="https://instagram.com/aachenertrompetenforum" target="_blank" rel="noopener" class="contact-value">@aachenertrompetenforum</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">Location</span>
+            <span class="contact-value">Aachen, Germany</span>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap" data-reveal>
+          <div class="form-success" id="formSuccess" style="display:none;">
+            <p>✓ Message sent — we'll be in touch soon!</p>
+          </div>
+          <div class="form-error-msg" id="formError" style="display:none;">
+            <p>Something went wrong. Please try again or email us directly.</p>
+          </div>
+          <form class="contact-form" id="contactForm">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required />
+              </div>
+              <div class="form-field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="you@email.com" required />
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="What is this about?" />
+            </div>
+            <div class="form-field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" placeholder="Your message..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary form-submit" id="formSubmit">Send Message</button>
+            <p class="form-note">We typically respond within 2–3 business days.</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="../images/logo.png" alt="Aachener Trompetenforum" class="footer-logo" />
+          <p class="footer-tagline">Brass. Refined.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <a href="/en/#about">About</a>
+          <a href="news.html">News &amp; Concerts</a>
+          <a href="ensembles.html">Ensembles</a>
+          <a href="barockorchester.html">Baroque Orchestra</a>
+          <a href="foerderer.html">Supporters</a>
+          <a href="kontakt.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Privacy Policy</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Aachener Trompetenforum e.V. · Aachen, Germany</span>
+        <span>contact@trompetenforum.rwth-aachen.de</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../scripts/main.js"></script>
+  <script>
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('formSubmit');
+    const successMsg = document.getElementById('formSuccess');
+    const errorMsg = document.getElementById('formError');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+      errorMsg.style.display = 'none';
+
+      const data = new FormData(form);
+      try {
+        const res = await fetch('https://formspree.io/f/xpqgojga', {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          form.style.display = 'none';
+          successMsg.style.display = 'block';
+        } else {
+          throw new Error();
+        }
+      } catch {
+        errorMsg.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+      }
+    });
+  </script>
+</body>
+</html>
