@@ -1503,6 +1503,15 @@ body::before {
 .signup-block { margin-top: 32px; }
 .signup-block .btn-primary { white-space: normal; text-align: left; line-height: 1.4; }
 
+.form-banner {
+  max-width: 640px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 24px;
+  aspect-ratio: 16/6;
+}
+.form-banner img { width: 100%; height: 100%; object-fit: cover; }
+
 .embed-gate {
   max-width: 640px;
   padding: 36px;
